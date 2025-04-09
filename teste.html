@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Power BI</title>
+    <style>
+        /* Garantir que a página ocupe 100% da largura e altura da tela */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;  /* Faz o iframe ocupar toda a largura da tela */
+            height: 100vh;  /* Faz o iframe ocupar toda a altura da tela */
+            border: none;  /* Remove a borda do iframe */
+        }
+    </style>
+    <script>
+        // Função para recarregar o iframe a cada X minutos (por exemplo, a cada 10 minutos)
+        setInterval(function() {
+            var iframe = document.querySelector('iframe');
+            var src = iframe.src;  // Captura o 'src' atual do iframe
+            iframe.src = '';  // Limpa o 'src'
+            iframe.src = src;  // Define o 'src' novamente, forçando o recarregamento
+        }, 600000); // Recarrega o iframe a cada 10 minutos (600000 ms)
+    </script>
+</head>
+<body>
+    <!-- Incorporando o Power BI -->
+    <iframe title="teste" 
+            src="https://app.powerbi.com/reportEmbed?reportId=f3a9ed26-7981-4b6d-a26a-c7f29bf3c4a2&autoAuth=true&ctid=e5f7c9fc-03cf-4409-83b9-877bfe7f1d2c" 
+            frameborder="0" allowFullScreen="true"></iframe>
+</body>
+</html>
